@@ -17,9 +17,9 @@
 // ├─────┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴─────┤
 // │        │     │caps │bri- │bri+ │     │     │ bsp │ up  │ del │     │     │     │        │
 // ├────────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴────────┤
-// │ XXXXXXX │     │play │vol- │vol+ │     │     │left │down │right│  |  │     │             │
+// │ XXXXXXX │     │play │vol- │vol+ │     │  ~  │left │down │right│  |  │  `  │             │
 // ├─────────┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴───────┬─────┤
-// │            │     │     │     │     │     │     │     │  `  │  ~  │  \  │          │     │
+// │            │     │     │     │     │     │     │     │     │     │  \  │          │     │
 // └─────────┬──┴──┬──┴────┬┴─────┴─────┴─────┴─────┴─────┴────┬┴─────┴┬────┴┬─────────┴─────┘
 //           │     │       │              return               │       │     │
 //           └─────┴───────┴───────────────────────────────────┴───────┴─────┘
@@ -97,11 +97,11 @@ function map(from, to, opts) {
     map("o", "delete_forward", { layer: "extend" }),
     map("spacebar", "return_or_enter", { layer: "extend" }),
 
-    // Backslash, backtick, pipe, and tilde.
-    map("semicolon", ["shift", "backslash"], { layer: "extend" }),
-    map("comma", "grave_accent_and_tilde", { layer: "extend" }),
-    map("period", ["shift", "grave_accent_and_tilde"], { layer: "extend" }),
+    // Backslash, pipe, backtick, and tilde.
     map("slash", "backslash", { layer: "extend" }),
+    map("semicolon", ["shift", "backslash"], { layer: "extend" }),
+    map("quote", "grave_accent_and_tilde", { layer: "extend" }),
+    map("h", ["shift", "grave_accent_and_tilde"], { layer: "extend" }),
 
     // Function keys.
     map("1", "f1", { layer: "extend" }),
