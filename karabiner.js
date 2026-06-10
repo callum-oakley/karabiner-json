@@ -1,7 +1,3 @@
-// Location IDs from Karabiner-EventViewer
-const HOME_MACBOOK = 41;
-const WORK_MACBOOK = 45;
-
 function map(from, to, opts) {
   const manipulator = {
     type: "basic",
@@ -27,24 +23,11 @@ function map(from, to, opts) {
   }
 
   if (opts && opts.layer) {
-    if (!manipulator.conditions) {
-      manipulator.conditions = [];
-    }
-    manipulator.conditions.push({
+    manipulator.conditions = [{
       type: "variable_if",
       name: opts.layer,
       value: true,
-    });
-  }
-
-  if (opts && opts.device) {
-    if (!manipulator.conditions) {
-      manipulator.conditions = [];
-    }
-    manipulator.conditions.push({
-      type: "device_if",
-      identifiers: [{ location_id: opts.device }],
-    });
+    }];
   }
 
   return manipulator;
