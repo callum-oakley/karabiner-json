@@ -54,29 +54,42 @@ function map(from, to, opts) {
 // ┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┐
 // │     │     │     │     │     │     │     │     │     │     │     │     │     │     │     │
 // ├─────┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴─────┤
-// │ raise  │  q  │  w  │  e  │  r  │  t  │  y  │  u  │  i  │  o  │  p  │ tab │     │        │
+// │  num   │  q  │  w  │  e  │  r  │  t  │  y  │  u  │  i  │  o  │  p  │ tab │     │        │
 // ├────────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴────────┤
-// │  lower  │  a  │  s  │  d  │  f  │  g  │  h  │  j  │  k  │  l  │  ;  │  '  │             │
+// │   nav   │  a  │  s  │  d  │  f  │  g  │  h  │  j  │  k  │  l  │  ;  │  '  │             │
 // ├─────────┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴───────┬─────┤
 // │   shift    │  z  │  x  │  c  │  v  │  b  │  n  │  m  │  ,  │  .  │  /  │  shift   │     │
 // └─────────┬──┴──┬──┴────┬┴─────┴─────┴─────┴─────┴─────┴────┬┴─────┴┬────┴┬─────────┴─────┘
 //           │ alt │  cmd  │               space               │ ctrl  │ alt │
 //           └─────┴───────┴───────────────────────────────────┴───────┴─────┘
 //
-// raise
+// num
 // ┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┐
 // │     │     │     │     │     │     │     │     │     │     │     │     │     │     │     │
 // ├─────┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴─────┤
-// │ XXXXXX │     │     │     │     │     │     │  1  │  2  │  3  │  4  │     │     │        │
+// │ XXXXXX │     │     │     │     │     │bri+ │  1  │  2  │  3  │  4  │     │     │        │
 // ├────────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴────────┤
-// │         │     │ fn  │ alt │shift│     |     |  5  │  6  │  7  │  8  │     │             │
+// │         │     │ fn  │ alt │shift│     |bri- |  5  │  6  │  7  │  8  │     │             │
 // ├─────────┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴───────┬─────┤
 // │            │     │     │     │     │     │     │  9  │  0  │  -  │  =  │          │     │
 // └─────────┬──┴──┬──┴────┬┴─────┴─────┴─────┴─────┴─────┴────┬┴─────┴┬────┴┬─────────┴─────┘
 //           │     │       │                                   │       │     │
 //           └─────┴───────┴───────────────────────────────────┴───────┴─────┘
 //
-// raise + fn
+// nav
+// ┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┐
+// │     │     │     │     │     │     │     │     │     │     │     │     │     │     │     │
+// ├─────┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴─────┤
+// │        │     │     │     │     │     │vol+ │ bsp │ up  │ del │ esc │     │     │        │
+// ├────────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴────────┤
+// │ XXXXXXX │     │caps │ alt │shift│     |vol- |left │down │right│enter│  `  │             │
+// ├─────────┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴───────┬─────┤
+// │            │     │     │     │     │     │play │  [  │  ]  │     │  \  │          │     │
+// └─────────┬──┴──┬──┴────┬┴─────┴─────┴─────┴─────┴─────┴────┬┴─────┴┬────┴┬─────────┴─────┘
+//           │     │       │                                   │       │     │
+//           └─────┴───────┴───────────────────────────────────┴───────┴─────┘
+//
+// fn
 // ┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┐
 // │     │     │     │     │     │     │     │     │     │     │     │     │     │     │     │
 // ├─────┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴─────┤
@@ -88,111 +101,70 @@ function map(from, to, opts) {
 // └─────────┬──┴──┬──┴────┬┴─────┴─────┴─────┴─────┴─────┴────┬┴─────┴┬────┴┬─────────┴─────┘
 //           │     │       │                                   │       │     │
 //           └─────┴───────┴───────────────────────────────────┴───────┴─────┘
-//
-// lower
-// ┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┐
-// │     │     │     │     │     │     │     │     │     │     │     │     │     │     │     │
-// ├─────┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴─────┤
-// │        │     │     │     │     │     │     │ bsp │ up  │ del │ esc │     │     │        │
-// ├────────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴────────┤
-// │ XXXXXXX │     │ fn  │ alt │shift│     |     |left │down │right│enter│  `  │             │
-// ├─────────┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴───────┬─────┤
-// │            │     │     │     │     │     │     │     │  [  │  ]  │  \  │          │     │
-// └─────────┬──┴──┬──┴────┬┴─────┴─────┴─────┴─────┴─────┴────┬┴─────┴┬────┴┬─────────┴─────┘
-//           │     │       │                                   │       │     │
-//           └─────┴───────┴───────────────────────────────────┴───────┴─────┘
-//
-// lower + fn
-// ┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┐
-// │     │     │     │     │     │     │     │     │     │     │     │     │     │     │     │
-// ├─────┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴─────┤
-// │        │     │     │     │     │     │     │     │vol+ │bri+ │     │     │     │        │
-// ├────────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴────────┤
-// │ XXXXXXX │     │ XXX │ alt │shift│     |     |     │vol- │bri- │caps │     │             │
-// ├─────────┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴───────┬─────┤
-// │            │     │     │     │     │     │     │     │     │     │     │          │     │
-// └─────────┬──┴──┬──┴────┬┴─────┴─────┴─────┴─────┴─────┴────┬┴─────┴┬────┴┬─────────┴─────┘
-//           │     │       │                                   │       │     │
-//           └─────┴───────┴───────────────────────────────────┴───────┴─────┘
 ({
   description: "Callum's keymap",
+  // Layers ordered from "highest" to "lowest" because the first match applies.
   manipulators: [
-    // We're going to map left_control to extend, so map right_command to right_control.
+    // fn
+    map("d", "left_option", { layer: "fn" }),
+    map("f", "left_shift", { layer: "fn" }),
+    map("u", "f1", { layer: "fn" }),
+    map("i", "f2", { layer: "fn" }),
+    map("o", "f3", { layer: "fn" }),
+    map("p", "f4", { layer: "fn" }),
+    map("j", "f5", { layer: "fn" }),
+    map("k", "f6", { layer: "fn" }),
+    map("l", "f7", { layer: "fn" }),
+    map("semicolon", "f8", { layer: "fn" }),
+    map("m", "f9", { layer: "fn" }),
+    map("comma", "f10", { layer: "fn" }),
+    map("period", "f11", { layer: "fn" }),
+    map("slash", "f12", { layer: "fn" }),
+
+    // nav
+    map("s", "caps_lock", { layer: "nav" }),
+    map("d", "left_option", { layer: "nav" }),
+    map("f", "left_shift", { layer: "nav" }),
+    map("u", "delete_or_backspace", { layer: "nav" }),
+    map("i", "up_arrow", { layer: "nav" }),
+    map("o", "delete_forward", { layer: "nav" }),
+    map("p", "escape", { layer: "nav" }),
+    map("j", "left_arrow", { layer: "nav" }),
+    map("k", "down_arrow", { layer: "nav" }),
+    map("l", "right_arrow", { layer: "nav" }),
+    map("semicolon", "return_or_enter", { layer: "nav" }),
+    map("quote", "grave_accent_and_tilde", { layer: "nav" }),
+    map("m", "open_bracket", { layer: "nav" }),
+    map("comma", "close_bracket", { layer: "nav" }),
+    map("slash", "backslash", { layer: "nav" }),
+    map("y", "volume_increment", { layer: "nav" }),
+    map("h", "volume_decrement", { layer: "nav" }),
+    map("n", "play_or_pause", { layer: "nav" }),
+
+    // num
+    map("s", { layer: "fn" }, { layer: "num" }),
+    map("d", "left_option", { layer: "num" }),
+    map("f", "left_shift", { layer: "num" }),
+    map("u", "1", { layer: "num" }),
+    map("i", "2", { layer: "num" }),
+    map("o", "3", { layer: "num" }),
+    map("p", "4", { layer: "num" }),
+    map("j", "5", { layer: "num" }),
+    map("k", "6", { layer: "num" }),
+    map("l", "7", { layer: "num" }),
+    map("semicolon", "8", { layer: "num" }),
+    map("m", "9", { layer: "num" }),
+    map("comma", "0", { layer: "num" }),
+    map("period", "hyphen", { layer: "num" }),
+    map("slash", "equal_sign", { layer: "num" }),
+    map("y", "display_brightness_increment", { layer: "num" }),
+    map("h", "display_brightness_decrement", { layer: "num" }),
+
+    // default
+    map("tab", { layer: "num" }),
+    map("caps_lock", { layer: "nav" }),
+    map("left_control", { layer: "nav" }),
+    map("open_bracket", "tab"),
     map("right_command", "right_control"),
-
-    // Extend layer triggered by caps_lock for Macbooks or left_control for HHKBs.
-    map("caps_lock", { layer: "extend" }),
-    map("left_control", { layer: "extend" }),
-
-    // Function keys.
-    map("1", "f1", { layer: "extend" }),
-    map("2", "f2", { layer: "extend" }),
-    map("3", "f3", { layer: "extend" }),
-    map("4", "f4", { layer: "extend" }),
-    map("5", "f5", { layer: "extend" }),
-    map("6", "f6", { layer: "extend" }),
-    map("7", "f7", { layer: "extend" }),
-    map("8", "f8", { layer: "extend" }),
-    map("9", "f9", { layer: "extend" }),
-    map("0", "f10", { layer: "extend" }),
-    map("hyphen", "f11", { layer: "extend" }),
-    map("equal_sign", "f12", { layer: "extend" }),
-
-    // Left hand
-    map("w", "play_or_pause", { layer: "extend" }),
-    map("e", "volume_decrement", { layer: "extend" }),
-    map("r", "volume_increment", { layer: "extend" }),
-    map("s", "left_shift", { layer: "extend" }),
-    map("d", "left_option", { layer: "extend" }),
-    map("f", "left_control", { layer: "extend" }),
-    map("x", "caps_lock", { layer: "extend" }),
-    map("c", "display_brightness_decrement", { layer: "extend" }),
-    map("v", "display_brightness_increment", { layer: "extend" }),
-
-    // Right hand
-
-    // Arrow keys.
-    map("i", "up_arrow", { layer: "extend" }),
-    map("j", "left_arrow", { layer: "extend" }),
-    map("k", "down_arrow", { layer: "extend" }),
-    map("l", "right_arrow", { layer: "extend" }),
-
-    // Backspace, delete, and return.
-    map("u", "delete_or_backspace", { layer: "extend" }),
-    map("o", "delete_forward", { layer: "extend" }),
-    map("spacebar", "return_or_enter", { layer: "extend" }),
-
-    // Backslash, pipe, backtick, and tilde.
-    map("slash", "backslash", { layer: "extend" }),
-    map("semicolon", ["shift", "backslash"], { layer: "extend" }),
-    map("quote", "grave_accent_and_tilde", { layer: "extend" }),
-    map("h", ["shift", "grave_accent_and_tilde"], { layer: "extend" }),
-
-    // Map silly Macbook keys to the keys that should be there instead.
-    map("grave_accent_and_tilde", "escape", { device: HOME_MACBOOK }),
-    map("grave_accent_and_tilde", "left_shift", { device: WORK_MACBOOK }),
-    map("non_us_backslash", "escape", { device: WORK_MACBOOK }),
-
-    // Unmap redundant keys.
-    map("up_arrow"),
-    map("left_arrow"),
-    map("down_arrow"),
-    map("right_arrow"),
-    map("delete_or_backspace"),
-    map("return_or_enter"),
-    map("backslash"),
-    map("grave_accent_and_tilde"),
-    map("f1"),
-    map("f2"),
-    map("f3"),
-    map("f4"),
-    map("f5"),
-    map("f6"),
-    map("f7"),
-    map("f8"),
-    map("f9"),
-    map("f10"),
-    map("f11"),
-    map("f12"),
   ],
 });
