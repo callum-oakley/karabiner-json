@@ -166,5 +166,8 @@ function map(from, to, opts) {
     map("left_control", { layer: "nav" }),
     map("open_bracket", "tab"),
     map("right_command", "right_control"),
+
+    // The UK Macbook keyboard has a backtick where it should have a shift.
+    map("grave_accent_and_tilde", "left_shift"),
   ],
 });
