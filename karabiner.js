@@ -93,6 +93,7 @@ function map(from, to, opts) {
     map("l", "7", { layer: "num" }),
     map("semicolon", "8", { layer: "num" }),
 
+    map("n", ["control", "command", "spacebar"], { layer: "num" }),
     map("m", "9", { layer: "num" }),
     map("comma", "0", { layer: "num" }),
     map("period", "hyphen", { layer: "num" }),
