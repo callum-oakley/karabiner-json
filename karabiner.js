@@ -36,7 +36,7 @@ function map(from, to, opts) {
 ({
   description: "substan41",
   manipulators: [
-    // fn
+    // fn ------------------------------------------------------------------------------------------
     map("u", "f1", { layer: "fn" }),
     map("i", "f2", { layer: "fn" }),
     map("o", "f3", { layer: "fn" }),
@@ -52,7 +52,7 @@ function map(from, to, opts) {
     map("period", "f11", { layer: "fn" }),
     map("slash", "f12", { layer: "fn" }),
 
-    // nav
+    // nav -----------------------------------------------------------------------------------------
     map("s", { layer: "fn" }, { layer: "nav" }),
     map("d", "left_option", { layer: "nav" }),
     map("f", "left_shift", { layer: "nav" }),
@@ -76,7 +76,7 @@ function map(from, to, opts) {
     map("comma", "close_bracket", { layer: "nav" }),
     map("slash", "backslash", { layer: "nav" }),
 
-    // num
+    // num -----------------------------------------------------------------------------------------
     map("s", { layer: "fn" }, { layer: "num" }),
     map("d", "left_option", { layer: "num" }),
     map("f", "left_shift", { layer: "num" }),
@@ -93,20 +93,18 @@ function map(from, to, opts) {
     map("l", "7", { layer: "num" }),
     map("semicolon", "8", { layer: "num" }),
 
-    map("n", ["control", "command", "spacebar"], { layer: "num" }),
+    map("n", ["control", "command", "spacebar"], { layer: "num" }), // Character Viewer
     map("m", "9", { layer: "num" }),
     map("comma", "0", { layer: "num" }),
     map("period", "hyphen", { layer: "num" }),
     map("slash", "equal_sign", { layer: "num" }),
 
-    // default
+    // default -------------------------------------------------------------------------------------
     map("tab", { layer: "num" }),
     map("caps_lock", { layer: "nav" }),
-    map("left_control", { layer: "nav" }),
+    map("left_control", { layer: "nav" }), // For HHKB
     map("open_bracket", "tab"),
     map("right_command", "right_control"),
-
-    // For UK Macbooks
-    map("grave_accent_and_tilde", "left_shift"),
+    map("grave_accent_and_tilde", "left_shift"), // For UK Macbook
   ],
 });
