@@ -68,12 +68,12 @@ function map(from, to, opts) {
     map("j", "left_arrow", { layer: "nav" }),
     map("k", "down_arrow", { layer: "nav" }),
     map("l", "right_arrow", { layer: "nav" }),
-    map("semicolon", "return_or_enter", { layer: "nav" }),
-    map("quote", "grave_accent_and_tilde", { layer: "nav" }),
+    map("semicolon", "grave_accent_and_tilde", { layer: "nav" }),
 
     map("n", "play_or_pause", { layer: "nav" }),
     map("m", "open_bracket", { layer: "nav" }),
     map("comma", "close_bracket", { layer: "nav" }),
+    map("period", "semicolon", { layer: "nav" }),
     map("slash", "backslash", { layer: "nav" }),
 
     // num -----------------------------------------------------------------------------------------
@@ -104,6 +104,8 @@ function map(from, to, opts) {
     map("caps_lock", { layer: "nav" }),
     map("left_control", { layer: "nav" }), // For HHKB
     map("open_bracket", "tab"),
+    map("semicolon", "quote"),
+    map("quote", "return_or_enter"),
     map("right_command", "right_control"),
     map("grave_accent_and_tilde", "left_shift"), // For UK Macbook
   ],
