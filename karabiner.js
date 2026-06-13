@@ -91,6 +91,7 @@ function map(from, to, opts) {
 
     // nav -----------------------------------------------------------------------------------------
     // left hand
+    map("w", ["command", "control", "q"], { layer: "nav" }),
     map("e", ["shift", "command", "open_bracket"], { layer: "nav" }),
     map("r", ["shift", "command", "close_bracket"], { layer: "nav" }),
 
